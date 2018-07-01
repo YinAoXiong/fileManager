@@ -2,8 +2,9 @@
 #define WIDGET_H
 
 #include<vector>
-#include <QWidget>
+#include<QWidget>
 #include<QDebug>
+#include <QTimer>
 #include "diskblock.h"
 #include "emptyblocklist.h"
 
@@ -29,8 +30,24 @@ private slots:
 
     void on_close_clicked();
 
+    void updateGUI();
+
 private:
     Ui::Widget *ui;
+    //记录当前磁道移动方向，true为正向false为反向
+    bool direction=true;
+    //当前访问磁道
+    int trackID=0;
+    //最后的磁道号
+    int trackEnd=0;
+    //开始的磁道号
+    int trackBegin=127;
+    //更新访问磁道与磁盘用的定时器
+    QTimer * updateTimer;
+    //FCFS中使用的数据结构
+    list<int> waitIDByList;
+    vector<vector<int>> waitIDByVector;
+    //SCAN和CSCAN中
     vector<DiskBlock> disk;
     EmptyBlockList emptyBlockList;
     //磁道数
@@ -41,9 +58,11 @@ private:
     int inodeID=-1;
     QTreeWidgetItem * findItem(QTreeWidgetItem * item,QString name);
     //删除单个文件
-    void deleteFile(int id, QTreeWidgetItem *item);
+    int deleteFile(int id, QTreeWidgetItem *item);
     //递归删除文件夹
     void deleteDIR(int id, QTreeWidgetItem *treeItem);
+    //添加待访问的磁盘块
+    void addWaitBlock(int id);
 };
 
 #endif // WIDGET_H

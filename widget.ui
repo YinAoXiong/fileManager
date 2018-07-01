@@ -144,6 +144,96 @@
     <string>关闭</string>
    </property>
   </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>1300</x>
+     <y>320</y>
+     <width>121</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>当前访问磁道：</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="trackNumber">
+   <property name="geometry">
+    <rect>
+     <x>1520</x>
+     <y>320</y>
+     <width>121</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>暂未访问</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>1300</x>
+     <y>410</y>
+     <width>121</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>当前访问磁盘块：</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="blockNumber">
+   <property name="geometry">
+    <rect>
+     <x>1520</x>
+     <y>410</y>
+     <width>121</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>暂未访问</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_6">
+   <property name="geometry">
+    <rect>
+     <x>1300</x>
+     <y>210</y>
+     <width>121</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>磁盘调度算法：</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="diskOption">
+   <property name="geometry">
+    <rect>
+     <x>1520</x>
+     <y>220</y>
+     <width>87</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>FCFS</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>SCAN</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>CSCAN</string>
+    </property>
+   </item>
+  </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources/>
